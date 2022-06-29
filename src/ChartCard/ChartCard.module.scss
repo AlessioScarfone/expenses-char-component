@@ -1,0 +1,32 @@
+.ChartCard {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1rem;
+    background-color: var(--pale-orange);
+    border-radius: var(--border-radius);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--dark-brown)
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 2px solid var(--cream);
+    }
+    .lightText {
+        color: var(--medium-brown);
+        // font-weight: 700;
+        font-size: 14px;
+    }
+
+}
