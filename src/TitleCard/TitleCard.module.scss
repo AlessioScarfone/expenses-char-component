@@ -1,0 +1,11 @@
+.TitleCard {
+    background-color: var(--soft-red);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--cream);
+    padding: 1.1rem 1rem;
+    border-radius: 12px;
+}
