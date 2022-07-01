@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./ChartCard.module.scss";
+
+type DataType = { day: string; amount: number };
 
 export interface ChartCardIterface {
   title: string;
-  data: Array<{ day: string; amount: number }>;
+  data: Array<DataType>;
   totalAmount: number;
   percentage: string;
 }
@@ -14,15 +16,27 @@ const ChartCard: React.FC<ChartCardIterface> = ({
   totalAmount,
   percentage,
 }) => {
-  //TODO: find max value and color
+  const maxIndexList: number[] = useMemo(() => {
+    const max = Math.max(...data.map((d) => d.amount));
+    return data
+      .map((d, i) => (d.amount === max ? i : -1))
+      .filter((e) => e !== -1);
+  }, [data]);
+
+  // console.log("maxIndexList:", maxIndexList);
 
   return (
     <div className={styles.ChartCard}>
       <h2 style={{ marginBottom: "2rem" }}>{title}</h2>
       <div className={styles.chart}>
         <div className={styles.chartBarContainer}>
-          {data.map((d) => (
-            <ChartBar label={d.day} value={d.amount} key={d.day} />
+          {data.map((d, i) => (
+            <ChartBar
+              label={d.day}
+              value={d.amount}
+              key={d.day}
+              isMax={maxIndexList.includes(i)}
+            />
           ))}
         </div>
       </div>
@@ -46,14 +60,24 @@ const ChartCard: React.FC<ChartCardIterface> = ({
   );
 };
 
-const ChartBar: React.FunctionComponent<{ label: string; value: number }> = ({
-  label,
-  value,
-}) => {
-  const barSize = value * 3;
+const maxBarHeight = 250;
+const ChartBar: React.FunctionComponent<{
+  label: string;
+  value: number;
+  isMax?: boolean;
+}> = ({ label, value, isMax }) => {
+  //maxBarHeight : 100 = value : x
+  // const barSize = (value * 100) / maxBarHeight;
+  // console.log("Bar:", value, barSize);
+  const barSize = useMemo(() => value * 3, [value]);
+  const barClassNames = useMemo(() => [styles.bar, isMax ? styles.maxBar : ""].join(" "), [isMax])
+
   return (
-    <div className={styles.chartBar}>
-      <div className={styles.bar} style={{ height: `${barSize}px` }}></div>
+    <div className={styles.chartBar} style={{ height: `${maxBarHeight}px` }}>
+      <div
+        className={barClassNames}
+        style={{ height: `${barSize}px`, maxHeight: `${maxBarHeight}px` }}
+      ></div>
       <div className={styles.tooltip}>${value}</div>
       <div className={styles.label}>{label}</div>
     </div>

@@ -44,7 +44,6 @@
         align-items: center;
 
         .bar {
-            max-height: 250px;
             background-color: var(--soft-red);
             width: 70%;
             border-radius: 3px;
@@ -56,10 +55,18 @@
                 & + .tooltip {
                     visibility: visible;
                 }
+
+                &.maxBar {
+                    background-color: var(--hover-cyan);
+                }
             }
 
             @media (min-width: $desktop-width) {
                 width: 57%;
+            }
+
+            &.maxBar {
+                background-color: var(--cyan);
             }
         }
 
