@@ -13,7 +13,7 @@ export const TitleCard: React.FunctionComponent<TitleCardProps> = ({title, balan
         <h4>{title}</h4>
         <h2>${balance}</h2>
       </div>
-      <img alt="logo" src={`${process.env.PUBLIC_URL}/images/logo.svg`} width='20%'/>
+      <img alt="logo" src={`${process.env.PUBLIC_URL}/images/logo.svg`} className={[styles.logo,styles.rotateHorCenter].join(" ")}/>
     </div>
   )
 }

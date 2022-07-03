@@ -1,4 +1,5 @@
 @import '../variable.scss';
+@import '../animation.scss';
 
 .ChartCard {
     display: flex;
@@ -38,14 +39,14 @@
 
     .chartBar {
         display: flex;
-        width: 100%;
+        width: calc(100% / 7);
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
 
         .bar {
             background-color: var(--soft-red);
-            width: 70%;
+            width: 68%;
             border-radius: 3px;
             cursor: pointer;
 

@@ -3,7 +3,8 @@
 .App {
   background-color: var(--cream);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 2rem 0;
 
   display: flex;
   flex-direction: column;

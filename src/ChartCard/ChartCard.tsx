@@ -70,7 +70,7 @@ const ChartBar: React.FunctionComponent<{
   // const barSize = (value * 100) / maxBarHeight;
   // console.log("Bar:", value, barSize);
   const barSize = useMemo(() => value * 3, [value]);
-  const barClassNames = useMemo(() => [styles.bar, isMax ? styles.maxBar : ""].join(" "), [isMax])
+  const barClassNames = useMemo(() => [styles.bar, styles.fadeIn, isMax ? styles.maxBar : ""].join(" "), [isMax])
 
   return (
     <div className={styles.chartBar} style={{ height: `${maxBarHeight}px` }}>
