@@ -11,7 +11,7 @@ function App() {
   
   return (
     <div className={styles.App}>
-      <SourceBadge url="/" distanceFromTop={35}/>
+      <SourceBadge url="https://github.com/AlessioScarfone/expenses-char-component" distanceFromTop={35}/>
       <div className={styles.container}>
         <div style={{marginBottom: '1rem'}}>
           <TitleCard title="My balance" balance={921.48}/>
