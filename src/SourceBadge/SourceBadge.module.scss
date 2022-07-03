@@ -1,0 +1,79 @@
+.SourceBadgeContainer {
+    --fg: #121212d4;
+    --bg: white;
+    -webkit-tap-highlight-color: transparent;
+
+    display: flex;
+    position: fixed;
+    right: 0px;
+    top: 35vh;
+    width: 70px;
+    height: 60px;
+    background: var(--bg);
+    z-index: 999;
+    border-radius: 30px 0 0 30px;
+    border-color: var(--fg);
+    border-style: solid;
+    border-width: 3px 0px 3px 3px;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    svg.feather.feather-github {
+        width: 35px;
+        height: 35px;
+        margin-left: 14px;
+        stroke: var(--fg);
+    }
+
+    -webkit-animation: swing-in-right-fwd 0.5s ease-in-out both;
+	        animation: swing-in-right-fwd 0.5s ease-in-out both;
+}
+
+.closeButton {
+    position: absolute;
+    left: -36px;
+    top: 14px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    svg {
+        color: #ff4545;
+    }
+}
+
+@-webkit-keyframes swing-in-right-fwd {
+  0% {
+    -webkit-transform: rotateY(-100deg);
+            transform: rotateY(-100deg);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-right-fwd {
+  0% {
+    -webkit-transform: rotateY(-100deg);
+            transform: rotateY(-100deg);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 1;
+  }
+}
