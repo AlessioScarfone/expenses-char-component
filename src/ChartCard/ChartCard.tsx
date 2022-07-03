@@ -27,7 +27,7 @@ const ChartCard: React.FC<ChartCardIterface> = ({
 
   return (
     <div className={styles.ChartCard}>
-      <h2 style={{ marginBottom: "2rem" }}>{title}</h2>
+      <h3 style={{ marginBottom: "2rem" }}>{title}</h3>
       <div className={styles.chart}>
         <div className={styles.chartBarContainer}>
           {data.map((d, i) => (
