@@ -3,6 +3,11 @@
     --bg: white;
     -webkit-tap-highlight-color: transparent;
 
+    &:visited {
+        color: var(--fg);
+    }
+
+
     display: flex;
     position: fixed;
     right: 0px;
