@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/expenses-char-component/static/css/main.d8f8f546.css",
+    "main.js": "/expenses-char-component/static/js/main.f0ae5b0d.js",
+    "index.html": "/expenses-char-component/index.html",
+    "static/media/github.svg": "/expenses-char-component/static/media/github.e7ab8675a2cbadea548cafe724065b9e.svg",
+    "static/media/x.svg": "/expenses-char-component/static/media/x.6c9a4ba71a333be7b021fc6da39d864c.svg",
+    "main.d8f8f546.css.map": "/expenses-char-component/static/css/main.d8f8f546.css.map",
+    "main.f0ae5b0d.js.map": "/expenses-char-component/static/js/main.f0ae5b0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8f8f546.css",
+    "static/js/main.f0ae5b0d.js"
+  ]
+}
