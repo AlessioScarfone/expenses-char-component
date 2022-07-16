@@ -15,26 +15,34 @@ const SourceBadge = ({
   time = 5000,
 }: SourceBadgeProps) => {
   const [show, setShow] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
 
   useEffect(() => {
+    let t: NodeJS.Timeout | null | undefined = null;
     if (url) {
-      setTimeout(() => {
+      t = setTimeout(() => {
         setShow(true);
       }, time);
     }
+    return () => {
+      if (t) clearTimeout(t);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const close = (event: any) => {
-    setShow(false);
     event.preventDefault();
+    setAnimateOut(true);
   };
 
   return (
     <>
       {show && (
         <a
-          className={styles.SourceBadgeContainer}
+          className={[
+            styles.SourceBadgeContainer,
+            animateOut ? styles.closing : "",
+          ].join(" ")}
           href={url}
           target="blank"
           style={{
@@ -44,7 +52,7 @@ const SourceBadge = ({
           <span className={styles.closeButton} onClick={close}>
             <Close strokeWidth={3} />
           </span>
-          <GitHub/>
+          <GitHub />
         </a>
       )}
     </>
